@@ -26,7 +26,10 @@ def showScore():
         return json_score['firsttime']
 
 
-firstTime = showScore()
+if firstTime:
+    print()
+else:
+    firstTime = showScore()
 
 if firstTime:
     try:
@@ -38,7 +41,7 @@ if firstTime:
         }
 
         # Serializing json
-        json_object = json.dumps(dictionary, indent=2)
+        json_object = json.dumps(dictionary, indent=3)
 
         # Writing to sample.json
         with open("sample.json", "w") as outfile:
@@ -109,7 +112,7 @@ while r:
         result = 'scissoR'
     elif (choice == 3 and comp_choice == 2):
         print('Scissors wins =>', end="")
-        result = 'Rock'
+        result = 'Scissors'
 
     if result == 'DRAW':
         print("<== Its a tie ==>")
